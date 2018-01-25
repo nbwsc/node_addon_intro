@@ -341,6 +341,11 @@ ifeq ($(strip $(foreach prefix,$(NO_LOAD),\
 endif
 ifeq ($(strip $(foreach prefix,$(NO_LOAD),\
     $(findstring $(join ^,$(prefix)),\
+                 $(join ^,js-cpp.target.mk)))),)
+  include js-cpp.target.mk
+endif
+ifeq ($(strip $(foreach prefix,$(NO_LOAD),\
+    $(findstring $(join ^,$(prefix)),\
                  $(join ^,myobject.target.mk)))),)
   include myobject.target.mk
 endif

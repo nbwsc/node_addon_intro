@@ -3,4 +3,4 @@
 export builddir_name ?= ./build/.
 .PHONY: all
 all:
-	$(MAKE) object callback function addon myobject type hello
+	$(MAKE) object js-cpp addon myobject type function callback hello

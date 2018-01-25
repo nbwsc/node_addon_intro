@@ -30,6 +30,10 @@
     {
         "target_name":"type",
         "sources":["type.cc"]
+    },
+    {
+        "target_name":"js-cpp",
+        "sources":["js-cpp.cc"]
     }
   ]
 }
