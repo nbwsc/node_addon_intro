@@ -349,6 +349,11 @@ ifeq ($(strip $(foreach prefix,$(NO_LOAD),\
                  $(join ^,object.target.mk)))),)
   include object.target.mk
 endif
+ifeq ($(strip $(foreach prefix,$(NO_LOAD),\
+    $(findstring $(join ^,$(prefix)),\
+                 $(join ^,type.target.mk)))),)
+  include type.target.mk
+endif
 
 quiet_cmd_regen_makefile = ACTION Regenerating $@
 cmd_regen_makefile = cd $(srcdir); /Users/doyee/.nvm/versions/node/v8.9.3/lib/node_modules/node-gyp/gyp/gyp_main.py -fmake --ignore-environment "--toplevel-dir=." -I/Users/doyee/workspace/node/testDateAddon/build/config.gypi -I/Users/doyee/.nvm/versions/node/v8.9.3/lib/node_modules/node-gyp/addon.gypi -I/Users/doyee/.node-gyp/8.9.3/include/node/common.gypi "--depth=." "-Goutput_dir=." "--generator-output=build" "-Dlibrary=shared_library" "-Dvisibility=default" "-Dnode_root_dir=/Users/doyee/.node-gyp/8.9.3" "-Dnode_gyp_dir=/Users/doyee/.nvm/versions/node/v8.9.3/lib/node_modules/node-gyp" "-Dnode_lib_file=/Users/doyee/.node-gyp/8.9.3/<(target_arch)/node.lib" "-Dmodule_root_dir=/Users/doyee/workspace/node/testDateAddon" "-Dnode_engine=v8" binding.gyp

@@ -26,6 +26,10 @@
         "myobjectaddon.cc",
         "myobject.cc"
       ]
+    },
+    {
+        "target_name":"type",
+        "sources":["type.cc"]
     }
   ]
 }
